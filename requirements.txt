@@ -1,0 +1,2 @@
+OS module = latest version
+shutil module = latest version
