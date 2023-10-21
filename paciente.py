@@ -1,5 +1,16 @@
 import os.path
 import shutil
+
+
+def validar():
+    CWD = os.getcwd()
+    os.chdir(fr'{CWD}')
+    dst_path = 'pacientes'
+    if not os.path.exists(dst_path):
+        os.makedirs(dst_path)
+validar()
+
+
 cwd = os.getcwd()
 os.chdir(f'{cwd}\pacientes')  # Qual o diretório que estamos usando. CWD = Current Working Directory
 
@@ -56,13 +67,11 @@ def removePatients():
 
 
 def archivePatient():
-    name = str(input("Digite o nome do paciente que será arquivado: "))
     dst_path = 'pacientesArquivados'
-
-
     if not os.path.exists(dst_path):
         os.makedirs(dst_path)
 
+    name = str(input("Digite o nome do paciente que será arquivado: "))
     if os.path.exists(f"{name}.txt"):
         shutil.move(fr"{cwd}\pacientes\{name}.txt",fr"{cwd}\pacientes\pacientesArquivados\{name}.txt")  # Mover o .txt do paciente com uso do shutil (só está aqui para isso mesmo)
         print("\n---> Paciente arquivado com sucesso! \n")
