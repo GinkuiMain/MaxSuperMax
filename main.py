@@ -83,12 +83,21 @@ Zuzu changelogs:
 ⣿⡿⠋⠁⠀⠀⢀⣀⣠⡴⣸⣿⣇⡄⠀⠀⠀⠀⢀⡿⠄⠙⠛⠀⣀⣠⣤⣤⠄⠀ 
 
 
-3 - Vou colocar uma interface (eventualmente)
 
-4 - 笑えない日々を辿ったって
-    変わらない今を呪ったって
-    宙に舞った言葉じゃ
-    あなたを救えないのだろう
+3 - Vou colocar uma interface (eventualmente)
     
 5 - ESTOU COM SONO 🔥🔥
+
+
+        async def join(ctx):
+            try:
+                if ctx.author.voice:  # If the author/user is in a vc
+                    channel = ctx.message.author.voice.channel
+                    await channel.connect()
+                    await ctx.send("El Psy Congroo! I joined the voice chat. Now, let's vibe.")
+                else:
+                    await ctx.send("Couldn't hack to the gate. The Beta Line is a lie and Steins Gate ain't real :( ")
+            except Exception as erro:
+                await ctx.send(f"Something went wrong {erro}")
+
 """

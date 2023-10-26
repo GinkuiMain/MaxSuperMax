@@ -26,10 +26,13 @@ def createPatient():
             return print("\nUsuário já existente\n")  # Se o usuário existe ou não
 
         desc = str(input("Digite a condição/descrição do paciente: "))
-        with open(f"{name}.txt", "w") as file:  # Criar um novo txt, fazendo o uso do "w" (write)
-            file.write(f"Nome do Paciente: {name} \n")
-            file.write(f"Descrição do paciente: {desc} \n")
-            print("\n---> Usuário adicionado com sucesso! \n")
+        if not desc:
+            print("\n---> Escreva um nome válido, sem que seja só uma letra.\n")
+        else:
+            with open(f"{name}.txt", "w") as file:  # Criar um novo txt, fazendo o uso do "w" (write)
+                file.write(f"Nome do Paciente: {name} \n")
+                file.write(f"Descrição do paciente: {desc} \n")
+                print("\n---> Usuário adicionado com sucesso! \n")
 
 
 def visualisePatients():
@@ -84,6 +87,7 @@ def removePatients():
             print("\n---> Paciente removido com sucesso! \n")
         else:
             print("Usuário não encontrado.")
+
 
 
 def archivePatient():
