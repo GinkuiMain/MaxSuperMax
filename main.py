@@ -87,7 +87,6 @@ Zuzu changelogs:
     
 5 - ESTOU COM SONO 🔥🔥
 
-
         async def join(ctx):
             try:
                 if ctx.author.voice:  # If the author/user is in a vc

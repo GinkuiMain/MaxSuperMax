@@ -125,7 +125,6 @@ def deArchivePatient():
 """
 Estou atumalacando
 Tô ficando mais louco que o Okabe procurando a maldita linha alfa
-
 :sob:
 """
 
