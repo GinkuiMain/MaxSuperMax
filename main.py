@@ -1,6 +1,7 @@
 from paciente import *
 
 
+
 def main():
     while True:
         try:
