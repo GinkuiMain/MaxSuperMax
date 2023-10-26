@@ -121,3 +121,11 @@ def deArchivePatient():
             print("\n---> Paciente desarquivado com sucesso! \n")
         else:
             print('Paciente não encontrado.')
+
+"""
+Estou atumalacando
+Tô ficando mais louco que o Okabe procurando a maldita linha alfa
+
+:sob:
+"""
+

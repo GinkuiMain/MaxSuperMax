@@ -83,7 +83,6 @@ Zuzu changelogs:
 ⣿⡿⠋⠁⠀⠀⢀⣀⣠⡴⣸⣿⣇⡄⠀⠀⠀⠀⢀⡿⠄⠙⠛⠀⣀⣠⣤⣤⠄⠀ 
 
 
-
 3 - Vou colocar uma interface (eventualmente)
     
 5 - ESTOU COM SONO 🔥🔥
