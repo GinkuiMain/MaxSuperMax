@@ -16,7 +16,6 @@ cwd = os.getcwd()
 os.chdir(f'{cwd}\pacientes')  # Qual o diretório que estamos usando. CWD = Current Working Directory
 
 
-
 def createPatient():
     name = str(input("Digite o nome do paciente: "))
     if not name:
