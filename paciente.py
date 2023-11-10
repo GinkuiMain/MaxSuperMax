@@ -14,6 +14,7 @@ validar()
 
 cwd = os.getcwd()
 os.chdir(f'{cwd}\pacientes')  # Qual o diretório que estamos usando. CWD = Current Working Directory
+dirVP = "pacientes"
 
 
 def createPatient():
@@ -36,18 +37,17 @@ def createPatient():
 
 
 def visualisePatients():
-
-    dirVP = "pacientes"  # Um for loop com todos os pacientes no arquivo (para facilitar a vida do usuário)
+    # Um for loop com todos os pacientes no arquivo (para facilitar a vida do usuário)
     for filePatient in os.listdir(fr"{cwd}\{dirVP}"):
         if filePatient.endswith('.txt'):
-            print(f"Paciente: {filePatient}")
+            print(f"Paciente: {filePatient[:-4]}")  # Literal, só remove o ".txt" para ficar mais bonitinho.
         print("")
 
-    name = str(input("Digite o nome do paciente que s2erá vizualizado: \n"))
+    name = str(input("Digite o nome do paciente que será vizualizado: \n"))
     print("")
 
     if not name:
-        print("\n---> Escreva um nome válido, sem que seja só uma letra.\n")
+        print("\n---> Escreva um nome válido, nem sem que seja só uma letra.\n")
     else:
         if os.path.exists(f"{name}.txt"):
             with open(f"{name}.txt", "r") as file:  # Ler o txt, fazendo uso do "r" (read)
@@ -58,9 +58,14 @@ def visualisePatients():
 
 
 def editPatients():
+    for filePatient in os.listdir(fr"{cwd}\{dirVP}"):
+        if filePatient.endswith('.txt'):
+            print(f"Paciente: {filePatient[:-4]}")  # Literal, só remove o ".txt" para ficar mais bonitinho.
+        print("")
+
     name = str(input("Digite o nome do paciente que será editado: "))
     if not name:
-        print("\n---> Escreva um nome válido, sem que seja só uma letra.\n")
+        print("\n---> Escreva um nome válido, nem sem que seja só uma letra.\n")
 
     else:
         descAlter = str(input("Nova descrição: "))
@@ -77,6 +82,11 @@ def editPatients():
 
 
 def removePatients():
+    for filePatient in os.listdir(fr"{cwd}\{dirVP}"):
+        if filePatient.endswith('.txt'):
+            print(f"Paciente: {filePatient[:-4]}")  # Literal, só remove o ".txt" para ficar mais bonitinho.
+        print("")
+
     name = str(input("Digite o nome do paciente que será deletado: "))
 
     if not name:
@@ -87,7 +97,6 @@ def removePatients():
             print("\n---> Paciente removido com sucesso! \n")
         else:
             print("Usuário não encontrado.")
-
 
 
 def archivePatient():
@@ -122,9 +131,9 @@ def deArchivePatient():
         else:
             print('Paciente não encontrado.')
 
+
 """
 Estou atumalacando
 Tô ficando mais louco que o Okabe procurando a maldita linha alfa
 :sob:
 """
-
